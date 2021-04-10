@@ -80,6 +80,7 @@ jobs:
       - run:
           name: Package
           command: |
+            cd src
             npm pack
       - store_artifacts:
           path: ./src/simpletodoapp-1.0.0.tgz
