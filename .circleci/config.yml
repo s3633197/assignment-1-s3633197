@@ -70,6 +70,21 @@ jobs:
           name: Parse sast report
           command: |
             exit $(cat ./src/sast-output.json | jq .total_count.sec)   
+  
+  package:
+    docker:
+        - image: circleci/node:lts
+    steps:
+      - checkout
+      - install-deps
+      - run:
+          name: Package
+          command: |
+            cd src
+            npm pack
+      - store_artifacts:
+          path: ./src/simpletodoapp-1.0.0.tgz
+          destination: simpletodoapp-1.0.0.tgz
 
   
 workflows:
@@ -79,4 +94,5 @@ workflows:
       - test-lint
       - code-coverage
       - failure-condition
+      - package
       
