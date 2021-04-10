@@ -33,6 +33,18 @@ jobs:
           command: |
             cd src
             npm run test-lint
+  
+  code-coverage:
+    docker:
+        - image: circleci/node:lts
+    steps:
+      - checkout
+      - install-deps
+      - run:
+          name: code-coverage
+          command: |
+            cd src
+            npm run test-coverage
 
   
 
@@ -41,4 +53,5 @@ workflows:
     jobs:
       - unit-test
       - test-lint
+      - code-coverage
       
