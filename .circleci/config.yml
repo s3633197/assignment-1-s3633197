@@ -86,6 +86,20 @@ jobs:
           path: ./src/simpletodoapp-1.0.0.tgz
           destination: simpletodoapp-1.0.0.tgz
 
+  integration-test:
+    docker:
+        - image: circleci/node:lts
+        - image: mongo:4.0
+    steps:
+      - checkout
+      - install-deps
+      - run:
+          name: integration test
+          command: |
+            cd src
+            npm run test-integration
+
+
   
 workflows:
   build-and-packge:
@@ -99,6 +113,9 @@ workflows:
             branches:
               only:
                 - master
+      - integration-test
+          
+  
                    
                   
                 
