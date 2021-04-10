@@ -94,5 +94,13 @@ workflows:
       - test-lint
       - code-coverage
       - failure-condition
-      - package
+      - package:
+          filters:
+            branches:
+              only:
+                - master
+                   
+                  
+                
+
       
