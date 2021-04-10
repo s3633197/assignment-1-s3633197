@@ -8,15 +8,23 @@ commands:
         command: |
           cd src
           npm ci
-          
+
 jobs:
-  ci-build:
+  unit-test:
     docker:
       - image: circleci/node:lts
     steps:
       - checkout
+      - install-deps
+      - run:
+          name: unit-test
+          command: |
+            cd src
+            npm run test-unit
+  
 
 workflows:
   build-and-packge:
     jobs:
-      - ci-build
+      - unit-test
+      
