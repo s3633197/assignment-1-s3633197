@@ -1,7 +1,7 @@
 JIALIN ZHAO
 s3633197
 
-# the circle doesn't work so i did it in my own one also the github, https://github.com/s3633197/assignment-1-s3633197 it is public. 
+# the circle doesn't work so i did it in my own one also the github, https://github.com/s3633197/assignment-1-student-s3633197 it is public. 
 # i will put the screenshots of circleci test and github merge in this file
 
 ![image](https://user-images.githubusercontent.com/53294143/114294501-b6c2e380-9ad1-11eb-9738-16156e7a2ecf.png)
